@@ -3,10 +3,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AJ Lens</title>
 
 <style>
+
+.container{
+max-width:1200px;
+margin:auto;
+padding-left:20px;
+padding-right:20px;
+}
+
 
 body{
 margin:0;
@@ -39,6 +47,12 @@ letter-spacing:3px;
 width:30px;
 height:30px;
 margin-right:10px;
+transition:transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover .logo-img{
+transform:scale(1.1);
+filter:drop-shadow(0 0 6px #ff2a2a);
 }
 
 .menu a{
@@ -113,13 +127,36 @@ box-shadow:0 0 12px #ff2a2a,
 transform:translateY(-2px);
 }
 
+@media (max-width:768px){
+
+.hero h1{
+font-size:50px;
+letter-spacing:5px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.menu a{
+margin-left:15px;
+font-size:14px;
+}
+
+.logo-img{
+width:24px;
+height:24px;
+}
+
+}
+  
 </style>
 
 </head>
 
 <body>
 
-<div class="navbar">
+<div class="navbar container">
 
 <div class="logo">
 <img src="logo.png" class="logo-img">
