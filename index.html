@@ -146,6 +146,17 @@ text-shadow:0 10px 30px rgba(0,0,0,0.8);
 animation:fadeUp 1s ease forwards;
 }
 
+.hero h1::after{
+content:'';
+display:block;
+width:120px;
+height:3px;
+background:#ff2a2a;
+margin:18px auto 0;
+
+box-shadow:0 0 10px rgba(255,42,42,0.6);
+}
+  
 /* TAGLINE */
 
 .hero p{
@@ -166,6 +177,14 @@ justify-content:center;
 gap:25px;
 
 animation:fadeUp 1.8s ease forwards;
+}
+
+.hero h1,
+.hero p,
+.hero-buttons,
+.scroll-indicator{
+position:relative;
+z-index:2;
 }
 
 /* BUTTONS */
@@ -290,6 +309,15 @@ box-shadow:
 }
 }
 
+@keyframes particlesMove{
+0%{
+transform:translateY(0);
+}
+100%{
+transform:translateY(-500px);
+}
+}
+
 /* NAVBAR SHRINK ON SCROLL */
 
 .navbar.scrolled{
@@ -301,6 +329,30 @@ transition:all 0.3s ease;
 
 .navbar{
 transition:all 0.3s ease;
+}
+
+/* PARTICLES */
+
+.particles{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+  
+.particles::before,
+.particles::after{
+content:'';
+position:absolute;
+width:200%;
+height:200%;
+background-image:
+radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+background-size:40px 40px;
+animation:particlesMove 60s linear infinite;
 }
   
 /* MOBILE RESPONSIVE */
@@ -439,6 +491,8 @@ AJ LENS
 </div>
 
 <section class="hero">
+
+<div class="particles"></div>
 
 <h1>AJ LENS</h1>
 
