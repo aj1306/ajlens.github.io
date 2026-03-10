@@ -765,26 +765,27 @@ window.location = href;
 </script>
 <script>
 
-window.addEventListener("scroll", () => {
+function revealElements(){
 
-const hero = document.querySelector(".hero");
-const about = document.querySelector(".about-section");
+const elements = document.querySelectorAll(".reveal");
 
-let scrollPosition = window.scrollY;
-let heroHeight = hero.offsetHeight;
+elements.forEach(el => {
 
-let heroOpacity = 1 - (scrollPosition / heroHeight);
-hero.style.opacity = heroOpacity;
+const windowHeight = window.innerHeight;
+const elementTop = el.getBoundingClientRect().top;
 
-let aboutTop = about.offsetTop;
-let aboutHeight = about.offsetHeight;
+const revealPoint = 120;
 
-let aboutOpacity = (scrollPosition - aboutTop + window.innerHeight/2) / aboutHeight;
-aboutOpacity = Math.min(Math.max(aboutOpacity,0),1);
-
-about.style.opacity = aboutOpacity;
+if(elementTop < windowHeight - revealPoint){
+el.classList.add("active");
+}
 
 });
+
+}
+
+window.addEventListener("scroll", revealElements);
+window.addEventListener("load", revealElements);
 
 </script>
 </body>
