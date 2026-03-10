@@ -158,6 +158,11 @@ margin:18px auto 0;
 box-shadow:0 0 10px rgba(255,42,42,0.6);
 }
 
+.hero-title{
+position:relative;
+z-index:5;
+}  
+
 .title-shine{
 position:relative;
 display:inline-block;
@@ -168,20 +173,20 @@ overflow:hidden;
 content:'';
 position:absolute;
 top:0;
-left:-100%;
-width:50%;
+left:-150%;
+width:80%;
 height:100%;
 
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,0.35)
+rgba(255,255,255,0.9),
 transparent
 );
 
 transform:skewX(-25deg);
 
-animation:titleShine 5s infinite;
+animation:titleShine 6s infinite;
 }
   
 .hero::after{
@@ -375,15 +380,15 @@ transform:translateY(-500px);
 
 @keyframes titleShine{
 0%{
-left:-120%;
+left:-150%;
 }
-60%{
-left:120%;
+50%{
+left:150%;
 }
 100%{
-left:120%;
+left:150%;
 }
-}  
+}
   
 /* NAVBAR SHRINK ON SCROLL */
 
@@ -609,7 +614,9 @@ AJ LENS
 <div class="particles"></div>
 <div class="hero-lights"></div>
 
-<h1><span class="title-shine">AJ LENS</span></h1>
+<h1 class="hero-title">
+  <span class="title-shine">AJ LENS</span>
+</h1>
 
 <p>Visual Stories Through My Lens</p>
 
