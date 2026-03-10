@@ -374,10 +374,27 @@ letter-spacing:2px;
 }
 
 .about-line{
-width:50px;
 height:3px;
 background:#ff2a2a;
 margin:12px 0 25px 0;
+border-radius:2px;
+width:fit-content;
+box-shadow:0 0 8px rgba(255,42,42,0.6);
+}
+
+.photographer-word{
+position:relative;
+display:inline-block;
+}
+
+.photographer-word::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-8px;
+width:100%;
+height:3px;
+background:#ff2a2a;
 border-radius:2px;
 }
 
@@ -603,8 +620,10 @@ AJ LENS
 
 <div class="about-text">
 
-<h2 class="reveal delay-1">Meet The Photographer 📷</h2>
-<div class="about-line reveal"></div>
+<h2 class="reveal delay-1">
+📷 Meet The <span class="photographer-word">Photographer</span>
+</h2>
+<div class="about-line reveal delay-3"></div>
 <h3 class="reveal delay-3">Asher John Mathew</h3>
 
 <p class="reveal delay-4">
