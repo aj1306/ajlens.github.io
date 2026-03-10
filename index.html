@@ -24,6 +24,10 @@ html{
 scroll-behavior:smooth;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 /* CONTAINER */
 
 .container{
@@ -92,6 +96,18 @@ width:100%;
 
 .menu a:hover{
 color:#ff2a2a;
+}
+
+/* LOGO GLOW WHEN SCROLLED */
+
+.navbar.scrolled .logo{
+text-shadow:
+0 0 8px rgba(255,42,42,0.9),
+0 0 16px rgba(255,42,42,0.6);
+}
+
+.navbar.scrolled .logo-img{
+filter:drop-shadow(0 0 6px #ff2a2a);
 }
 
 /* HERO SECTION */
@@ -273,6 +289,19 @@ box-shadow:
 0 0 20px rgba(255,42,42,0.5);
 }
 }
+
+/* NAVBAR SHRINK ON SCROLL */
+
+.navbar.scrolled{
+padding:10px 40px;
+background:rgba(0,0,0,0.8);
+border-bottom:1px solid rgba(255,42,42,0.6);
+transition:all 0.3s ease;
+}
+
+.navbar{
+transition:all 0.3s ease;
+}
   
 /* MOBILE RESPONSIVE */
 
@@ -391,7 +420,7 @@ margin-top:25px;
 
 </head>
 
-<body>
+<body id="top">
 
 <div class="navbar">
 
@@ -401,8 +430,8 @@ AJ LENS
 </a>
 
 <div class="menu">
-<a href="#">Home</a>
-<a href="#">About</a>
+<a href="#top">Home</a>
+<a href="#about">About</a>
 <a href="#">Portfolio</a>
 <a href="#">Contact</a>  
 </div>
@@ -417,7 +446,7 @@ AJ LENS
 
 <div class="hero-buttons">
 
-<a href="about.html" class="button">Meet The Photographer</a>
+<a href="#about" class="button">Meet The Photographer</a>
 
 <div class="divider"></div>
 
@@ -433,7 +462,7 @@ AJ LENS
 
  <div class="section-divider"></div> 
   
-<section class="about-section">
+<section class="about-section" id="about">
 
 <div class="about-container">
 
@@ -461,6 +490,21 @@ My dad first gave me his Canon 60D when I was in 7th grade, and since then I've 
 </div>
 
 </section>
+<script>
 
+window.addEventListener("scroll", function(){
+
+let navbar = document.querySelector(".navbar");
+
+if(window.scrollY > 80){
+navbar.classList.add("scrolled");
+}
+else{
+navbar.classList.remove("scrolled");
+}
+
+});
+
+</script>
 </body>
 </html>
