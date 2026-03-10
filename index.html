@@ -465,6 +465,33 @@ margin-top:20px;
 font-style:italic;
 opacity:0.7;
 }
+
+.initial{
+color:#ff2a2a;
+font-weight:600;
+
+text-shadow:
+0 0 6px rgba(255,42,42,0.9),
+0 0 12px rgba(255,42,42,0.6),
+0 0 20px rgba(255,42,42,0.4);
+}
+
+.initial{
+color:#ff2a2a;
+font-weight:600;
+animation:initialGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes initialGlow{
+0%{
+text-shadow:0 0 6px rgba(255,42,42,0.6);
+}
+100%{
+text-shadow:
+0 0 8px rgba(255,42,42,0.9),
+0 0 16px rgba(255,42,42,0.7);
+}
+}  
   
 /* ANIMATIONS */
 
@@ -626,7 +653,10 @@ AJ LENS
 Meet The <span class="photographer-word">Photographer 📷</span>
 </h2>
 <div class="about-line reveal delay-3"></div>
-<h3 class="reveal delay-3">Asher John Mathew</h3>
+<h3 class="reveal delay-3">
+<span class="initial">A</span>sher 
+<span class="initial">J</span>ohn Mathew
+</h3>
 
 <p class="reveal delay-4">
 Hey there and WELCOME to my portfolio! I'm Asher, the photographer behind all the photos you'll see below. I did my schooling in Bahrain and am currently in Ghaziabad pursuing my Bachelor's Degree in Computer Applications. I'm also a senior photographer at EWL, a cell in my college, and some of the photos displayed below were captured during some of the events that happened there. 
