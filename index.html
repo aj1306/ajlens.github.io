@@ -120,6 +120,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 position:relative;
+padding-top:80px;
 
 background:
 linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
@@ -139,6 +140,7 @@ font-family:'Montserrat', sans-serif;
 font-size:120px;
 letter-spacing:10px;
 margin:0;
+margin-bottom:10px;
 font-weight:700;
 text-shadow:0 10px 30px rgba(0,0,0,0.8);
 
@@ -156,6 +158,32 @@ margin:18px auto 0;
 box-shadow:0 0 10px rgba(255,42,42,0.6);
 }
 
+.title-shine{
+position:relative;
+display:inline-block;
+overflow:hidden;
+}
+
+.title-shine::after{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:50%;
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.35)
+transparent
+);
+
+transform:skewX(-25deg);
+
+animation:titleShine 5s infinite;
+}
+  
 .hero::after{
 content:'';
 position:absolute;
@@ -198,7 +226,9 @@ animation:fadeUp 1.8s ease forwards;
 
 .hero h1,
 .hero p,
-.hero-buttons,
+.hero-buttons{
+margin-top:25px;
+}
 .scroll-indicator{
 position:relative;
 z-index:2;
@@ -343,7 +373,18 @@ transform:translateY(-500px);
 }
 }
 
-
+@keyframes titleShine{
+0%{
+left:-120%;
+}
+60%{
+left:120%;
+}
+100%{
+left:120%;
+}
+}  
+  
 /* NAVBAR SHRINK ON SCROLL */
 
 .navbar.scrolled{
@@ -568,7 +609,7 @@ AJ LENS
 <div class="particles"></div>
 <div class="hero-lights"></div>
 
-<h1>AJ LENS</h1>
+<h1><span class="title-shine">AJ LENS</span></h1>
 
 <p>Visual Stories Through My Lens</p>
 
