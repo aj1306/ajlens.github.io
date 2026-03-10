@@ -516,6 +516,52 @@ animation:scrollBounce 2s infinite;
 .about-next-arrow:hover span{
 transform:rotate(45deg) translateY(4px);
 }
+
+/* GEAR SECTION */
+
+.gear-section{
+background:#050505;
+padding:120px 40px;
+text-align:center;
+}
+
+.gear-title{
+font-family:'Montserrat', sans-serif;
+font-size:40px;
+margin-bottom:60px;
+letter-spacing:2px;
+}
+
+.gear-container{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:30px;
+}
+
+.gear-card{
+background:#0f0f0f;
+padding:35px 20px;
+border-radius:8px;
+border:1px solid rgba(255,42,42,0.15);
+
+transition:all 0.3s ease;
+}
+
+.gear-card h3{
+color:#ff2a2a;
+margin-bottom:10px;
+}
+
+.gear-card p{
+opacity:0.8;
+}
+
+.gear-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
   
 /* ANIMATIONS */
 
@@ -720,9 +766,38 @@ My dad first gave me his Canon 60D when I was in 7th grade, and since then I've 
 </div>
 
 </div>
-
 </section>
 
+<section id="gear" class="gear-section">
+
+<h2 class="gear-title reveal">📷 Gear I Use</h2>
+
+<div class="gear-container">
+
+<div class="gear-card reveal">
+<h3>Camera</h3>
+<p>Canon 60D</p>
+</div>
+
+<div class="gear-card reveal">
+<h3>Lens</h3>
+<p>50mm f/1.8</p>
+</div>
+
+<div class="gear-card reveal">
+<h3>Editing</h3>
+<p>Adobe Lightroom</p>
+</div>
+
+<div class="gear-card reveal">
+<h3>Editing</h3>
+<p>Adobe Photoshop</p>
+</div>
+
+</div>
+
+</section>
+  
 <script>
 
 window.addEventListener("scroll", function(){
