@@ -562,6 +562,70 @@ opacity:0.8;
 transform:translateY(-6px);
 box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
+
+/* flip container */
+
+.gear-card{
+background:#0f0f0f;
+border-radius:8px;
+perspective:1000px;
+height:180px;
+}
+
+/* inner flip */
+
+.gear-inner{
+position:relative;
+width:100%;
+height:100%;
+transition:transform 0.6s;
+transform-style:preserve-3d;
+}
+
+/* flip on hover */
+
+.gear-card:hover .gear-inner{
+transform:rotateY(180deg);
+}
+
+/* front + back */
+
+.gear-front,
+.gear-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+border-radius:8px;
+}
+
+.gear-front{
+background:#0f0f0f;
+}
+
+.gear-back{
+background:#0f0f0f;
+transform:rotateY(180deg);
+}
+
+/* image styling */
+
+.gear-back img{
+max-width:90%;
+max-height:120px;
+object-fit:contain;
+}
+
+.gear-card:hover{
+box-shadow:0 0 15px rgba(255,42,42,0.5);
+}
   
 /* ANIMATIONS */
 
@@ -770,7 +834,7 @@ My dad first gave me his Canon 60D when I was in 7th grade, and since then I've 
 
 <section id="gear" class="gear-section">
 
-<h2 class="gear-title reveal">Gear I've Used 📷</h2>
+<h2 class="gear-title reveal">Gears I've Used 📷</h2>
 
 <div class="gear-container">
 
