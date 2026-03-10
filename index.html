@@ -318,21 +318,6 @@ transform:translateY(-500px);
 }
 }
 
-@keyframes bokehFloat{
-
-0%{
-transform:translateY(0) translateX(0);
-}
-
-50%{
-transform:translateY(-120px) translateX(40px);
-}
-
-100%{
-transform:translateY(-240px) translateX(-40px);
-}
-
-}
 
 /* NAVBAR SHRINK ON SCROLL */
 
@@ -364,26 +349,24 @@ z-index:1;
 .particles::after{
 content:'';
 position:absolute;
-top:-50%;
-left:-50%;
+top:0;
+left:0;
 width:200%;
 height:200%;
 
 background-image:
-radial-gradient(circle, rgba(255,42,42,0.7) 0px, rgba(255,42,42,0.4) 6px, transparent 12px);
+radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px);
 
-background-size:180px 180px;
+background-size:40px 40px;
 
-filter:blur(4px);
-
-animation:bokehFloat 40s linear infinite;
+animation:particlesMove 60s linear infinite;
 }
 
 .particles::after{
-animation-duration:60s;
-opacity:0.7;
+animation-duration:90s;
+opacity:0.6;
 }
-  
+
 .hero-lights{
 position:absolute;
 top:0;
