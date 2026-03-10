@@ -488,6 +488,17 @@ left:150%;
 
 }
 
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+  
 /* MOBILE */
 
 @media (max-width:768px){
@@ -578,21 +589,21 @@ AJ LENS
 
 <div class="about-container">
 
-<div class="about-image">
+<div class="about-image reveal">
 <img src="About.jpg" alt="Photographer">
 </div>
 
 <div class="about-text">
 
-<h2>📷 Meet The Photographer</h2>
-<div class="about-line"></div>
-<h3>Asher John Mathew</h3>
+<h2 class="reveal">📷 Meet The Photographer</h2>
+<div class="about-line reveal"></div>
+<h3 class="reveal">Asher John Mathew</h3>
 
-<p>
+<p class="reveal">
 Hey there and WELCOME to my portfolio! I'm Asher, the photographer behind all the photos you'll see below. I did my schooling in Bahrain and am currently in Ghaziabad pursuing my Bachelor's Degree in Computer Applications. I'm also a senior photographer at EWL, a cell in my college, and some of the photos displayed below were captured during some of the events that happened there. 
 </p>
 
-<p>
+<p class="reveal">
 My dad first gave me his Canon 60D when I was in 7th grade, and since then I've been addicted to the sound of the shutter every time a photo is clicked. The only time a person smile or poses without being asked is when a camera come in front of them, and to be honest, when people just live in the moment, that gives me time to click the best shots. So to sum up, I love clicking good moments and hope that I'll have time for this passion even after college. Anyway, you guys enjoy the gallery below. I'll take your leave and probably come back when I have a new photo to upload. Until then, BYEEEE!!
 </p>
 <p class="signature">— AJ</p>  
@@ -615,7 +626,7 @@ My dad first gave me his Canon 60D when I was in 7th grade, and since then I've 
 
 </div>
   
-<div class="about-buttons">
+<div class="about-buttons reveal">
 <a href="portfolio.html" class="button">View Gallery</a>
 <a href="contact.html" class="button secondary">Contact Asher</a>
 </div>
@@ -656,6 +667,30 @@ aboutSection.classList.add("show");
 }
 
 });
+
+</script>
+<script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+for(let i = 0; i < reveals.length; i++){
+
+const windowHeight = window.innerHeight;
+const elementTop = reveals[i].getBoundingClientRect().top;
+
+const revealPoint = 120;
+
+if(elementTop < windowHeight - revealPoint){
+reveals[i].classList.add("active");
+}
+
+}
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
 
 </script>
 </body>
