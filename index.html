@@ -520,11 +520,12 @@ transform:rotate(45deg) translateY(4px);
 /* GEAR SECTION */
 
 .gear-section{
-background:
-radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-#050505;
+background:#050505;
+padding:120px 40px;
+text-align:center;
 
-background-size:35px 35px;
+position:relative;
+overflow:hidden;
 }
 
 .gear-title{
@@ -736,7 +737,8 @@ z-index:2;
 }
 
 .gear-title,
-.gear-subtitle{
+.gear-subtitle,
+.gear-container{
 position:relative;
 z-index:2;
 }
@@ -750,6 +752,27 @@ opacity:0.15;
 animation-duration:120s;
 opacity:0.1;
 }
+
+#gear .particles{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+#gear .hero-lights{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:1;
+}  
   
 /* ANIMATIONS */
 
@@ -924,7 +947,8 @@ Hey there and WELCOME to my portfolio! I'm Asher, the photographer behind all th
 <p class="reveal delay-4">
 My dad first gave me his Canon 60D when I was in 7th grade, and since then I've been addicted to the sound of the shutter every time a photo is clicked. The only time a person smile or poses without being asked is when a camera come in front of them, and to be honest, when people just live in the moment, that gives me time to click the best shots. So to sum up, I love clicking good moments and hope that I'll have time for this passion even after college. Anyway, you guys enjoy the gallery below. I'll take your leave and probably come back when I have a new photo to upload. Until then, BYEEEE!!
 </p>
-<p class="signature">— AJ</p>  
+<p 
+class="signature">— AJ</p>  
 <div class="about-stats delay-5">
 
 <div class="stat">
@@ -961,6 +985,7 @@ My dad first gave me his Canon 60D when I was in 7th grade, and since then I've 
 
 <div class="gear-header">
 <div class="particles"></div>
+<div class="hero-lights"></div>
 <h2 class="gear-title reveal">Gears I've Used 📷</h2>
 
 <p class="gear-subtitle reveal">
