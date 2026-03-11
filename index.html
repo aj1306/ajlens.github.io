@@ -484,6 +484,16 @@ color:#ff2a2a;
 margin:0;
 }
 
+.stat h4{
+font-size:30px;
+color:#ff2a2a;
+font-weight:700;
+}
+
+.stat h4{
+text-shadow:0 0 8px rgba(255,42,42,0.6);
+}  
+
 .stat p{
 font-size:14px;
 opacity:0.7;
@@ -1217,17 +1227,17 @@ class="signature">— AJ</p>
 <div class="about-stats delay-5">
 
 <div class="stat">
-<h4>3+</h4>
+<h4 class="counter" data-target="3+">0</h4>
 <p>Years Experience</p>
 </div>
 
 <div class="stat">
-<h4>1000+</h4>
+<h4 class="counter" data-target="1000+">0</h4>
 <p>Photos Captured</p>
 </div>
 
 <div class="stat">
-<h4>100+</h4>
+<h4 class="counter" data-target="100+">0</h4>
 <p>Events Covered</p>
 </div>
 
@@ -1520,6 +1530,52 @@ hero.style.backgroundPositionY = scrollPosition * 0.4 + "px";
 
 });
 
+</script>
+<script>  
+  const counters = document.querySelectorAll('.counter');
+
+const startCounters = () => {
+
+counters.forEach(counter => {
+
+const target = +counter.getAttribute('data-target');
+let count = 0;
+
+const speed = target / 80;
+
+const update = () => {
+
+count += speed;
+
+if(count < target){
+counter.innerText = Math.floor(count);
+requestAnimationFrame(update);
+}else{
+counter.innerText = target + "+";
+}
+
+};
+
+update();
+
+});
+
+};
+
+const aboutSection = document.querySelector("#about");
+let counterStarted = false;
+
+window.addEventListener("scroll", () => {
+
+const trigger = window.innerHeight * 0.8;
+const top = aboutSection.getBoundingClientRect().top;
+
+if(top < trigger && !counterStarted){
+startCounters();
+counterStarted = true;
+}
+
+});  
 </script>
 </body>
 </html>
