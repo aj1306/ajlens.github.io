@@ -979,6 +979,35 @@ z-index:2;
 .gear-divider.reveal{
 transform:translateY(20px);
 }
+
+.gear-next-arrow{
+display:flex;
+justify-content:center;
+margin-top:80px;
+}
+
+.gear-next-arrow a{
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+}
+
+.gear-next-arrow span{
+width:20px;
+height:20px;
+
+border-bottom:2px solid #ff2a2a;
+border-right:2px solid #ff2a2a;
+
+transform:rotate(45deg);
+
+animation:scrollBounce 2s infinite;
+}
+
+.gear-next-arrow span:hover{
+box-shadow:0 0 10px #ff2a2a;
+}  
   
 /* ANIMATIONS */
 
@@ -1199,7 +1228,7 @@ class="signature">— AJ</p>
 <div class="about-buttons reveal delay-5">
 <a href="portfolio.html" class="button">View Gallery</a>
 <a href="contact.html" class="button secondary">Contact Asher</a>
-<a href="#portfolio" class="about-next-arrow">
+<a href="#gear" class="about-next-arrow">
 <span></span>
 </a>
 </div>
@@ -1398,9 +1427,12 @@ Hover over each gear to see a picture of it!
 </div>
 </div>
 </div>
-  
 </div>
-
+<div class="gear-next-arrow reveal delay-4">
+<a href="#portfolio">
+<span></span>
+</a>
+</div>
 </section>
   
 <script>
