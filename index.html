@@ -705,6 +705,10 @@ box-shadow:
 0 0 25px rgba(255,42,42,0.2);
 }
 
+.gear-card{
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}  
+  
 .aperture{
 position:absolute;
 top:50%;
@@ -770,6 +774,31 @@ z-index:2;
 .gear-container{
 position:relative;
 z-index:2;
+}
+
+.gear-divider{
+width:120px;
+height:3px;
+
+margin:20px auto 25px auto;
+
+background:#ff2a2a;
+border-radius:2px;
+
+box-shadow:
+0 0 10px rgba(255,42,42,0.9),
+0 0 20px rgba(255,42,42,0.6),
+0 0 30px rgba(255,42,42,0.4);
+}
+
+.gear-divider{
+animation:dividerPulse 3s ease-in-out infinite;
+}
+
+@keyframes dividerPulse{
+0%{box-shadow:0 0 8px rgba(255,42,42,0.7);}
+50%{box-shadow:0 0 18px rgba(255,42,42,1);}
+100%{box-shadow:0 0 8px rgba(255,42,42,0.7);}
 }
 
 #gear .particles::before{
@@ -1111,7 +1140,7 @@ class="signature">— AJ</p>
 <div class="gear-header">
 
 <h2 class="gear-title reveal">Gears I've Used 📷</h2>
-
+<div class="gear-divider"></div>
 <p class="gear-subtitle reveal">
 Hover over each gear to see a picture of it!
 </p>
