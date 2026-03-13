@@ -1083,6 +1083,28 @@ cursor:pointer;
 transform:scale(1.03);
 box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
+
+.masonry-gallery img{
+width:100%;
+height:auto;
+margin-bottom:20px;
+border-radius:6px;
+
+break-inside:avoid;
+
+opacity:0;
+transform:scale(0.98);
+
+transition:
+opacity 0.6s ease,
+transform 0.6s ease,
+box-shadow 0.4s ease;
+}
+
+.masonry-gallery img.loaded{
+opacity:1;
+transform:scale(1);
+}  
   
 /* ANIMATIONS */
 
@@ -1779,6 +1801,32 @@ startCounters();
 counterStarted = true;
 }
 
+const galleryImages = document.querySelectorAll(".masonry-gallery img");
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const img = entry.target;
+
+img.onload = () => {
+img.classList.add("loaded");
+};
+
+observer.unobserve(img);
+
+}
+
+});
+
+},{threshold:0.1});
+
+galleryImages.forEach(img=>{
+imageObserver.observe(img);
+});
+  
 });  
 </script>
 </body>
