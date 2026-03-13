@@ -2350,7 +2350,7 @@ loading="lazy"
 data-event="MarkFest 2K26 — Ganesh Vandhana"
 data-year="2026"
 data-venue="IMS Ghaziabad University Campus"
-data-comment="Captured the opening dance performance during the inauguration ceremony."'
+data-comment="Captured the opening dance performance during the inauguration ceremony."
 >
 <img 
 src="pimages/rimages/r025.jpg" 
@@ -2409,7 +2409,31 @@ data-comment="Captured the opening dance performance during the inauguration cer
 
 </div>
 
-</section> 
+</section>
+
+ <div id="photoModal" class="photo-modal">
+
+<div class="photo-modal-content">
+
+<span class="photo-close">&times;</span>
+
+<img id="modalImage">
+
+<div class="photo-info">
+
+<h3 id="photoEvent"></h3>
+
+<p class="photo-meta">
+<span id="photoYear"></span> • <span id="photoVenue"></span>
+</p>
+
+<p id="photoComment"></p>
+
+</div>
+
+</div>
+
+</div> 
   
 <script>
 
@@ -2538,6 +2562,7 @@ if(top < trigger && !counterStarted){
 startCounters();
 counterStarted = true;
 }
+});
 
 const galleryImages = document.querySelectorAll(".masonry-gallery img");
 
@@ -2574,8 +2599,6 @@ const modalVenue = document.getElementById("photoVenue");
 const modalComment = document.getElementById("photoComment");
 
 const closeBtn = document.querySelector(".photo-close");
-
-const galleryImages = document.querySelectorAll(".masonry-gallery img");
 
 galleryImages.forEach(img=>{
 
@@ -2624,30 +2647,6 @@ modal.style.display="none";
   
 });  
 </script>
-
-<div id="photoModal" class="photo-modal">
-
-<div class="photo-modal-content">
-
-<span class="photo-close">&times;</span>
-
-<img id="modalImage">
-
-<div class="photo-info">
-
-<h3 id="photoEvent"></h3>
-
-<p class="photo-meta">
-<span id="photoYear"></span> • <span id="photoVenue"></span>
-</p>
-
-<p id="photoComment"></p>
-
-</div>
-
-</div>
-
-</div>
   
 </body>
 </html>
