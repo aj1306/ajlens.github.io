@@ -1156,6 +1156,17 @@ margin-bottom:20px;
 
 }
 
+.photo-modal-content img{
+transform:scale(0.92);
+opacity:0;
+transition:transform 0.35s ease, opacity 0.35s ease;
+}
+
+.photo-modal.active img{
+transform:scale(1);
+opacity:1;
+}
+
 .photo-close{
 
 position:absolute;
