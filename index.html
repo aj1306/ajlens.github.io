@@ -1214,6 +1214,38 @@ scrollbar-color:#ff2a2a #111;
 overflow-y:auto;
 }
 
+.modal-nav{
+
+position:absolute;
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:40px;
+color:#ff2a2a;
+
+cursor:pointer;
+user-select:none;
+
+padding:10px 15px;
+
+transition:0.3s;
+
+}
+
+.modal-prev{
+left:10px;
+}
+
+.modal-next{
+right:10px;
+}
+
+.modal-nav:hover{
+color:#fff;
+text-shadow:0 0 10px #ff2a2a;
+}
+
 /* SCROLLBAR STYLE */
 
 /* Chrome, Edge, Safari */
@@ -2492,11 +2524,14 @@ data-comment="Captured the opening dance performance during the inauguration cer
 
 </section>
 
- <div id="photoModal" class="photo-modal">
+<div id="photoModal" class="photo-modal">
 
 <div class="photo-modal-content">
 
 <span class="photo-close">&times;</span>
+
+<div class="modal-nav modal-prev">&#10094;</div>
+<div class="modal-nav modal-next">&#10095;</div>
 
 <img id="modalImage">
 
@@ -2513,8 +2548,7 @@ data-comment="Captured the opening dance performance during the inauguration cer
 </div>
 
 </div>
-
-</div> 
+</div>
   
 <script>
 
@@ -2683,6 +2717,11 @@ const modalComment = document.getElementById("photoComment");
 
 const closeBtn = document.querySelector(".photo-close");
 
+let currentIndex = 0;
+
+const prevBtn = document.querySelector(".modal-prev");
+const nextBtn = document.querySelector(".modal-next");
+
 galleryImages.forEach(img=>{
 
 let hoverTimer;
@@ -2710,6 +2749,14 @@ function openModal(img){
 modal.classList.add("active");
 document.body.classList.add("modal-open");
 
+currentIndex = Array.from(galleryImages).indexOf(img);
+
+updateModal(img);
+
+}
+
+function updateModal(img){
+
 modalImg.src = img.src;
 
 modalEvent.innerText = img.dataset.event;
@@ -2718,6 +2765,32 @@ modalVenue.innerText = img.dataset.venue;
 modalComment.innerText = img.dataset.comment;
 
 }
+
+}
+
+nextBtn.onclick = ()=>{
+
+currentIndex++;
+
+if(currentIndex >= galleryImages.length){
+currentIndex = 0;
+}
+
+updateModal(galleryImages[currentIndex]);
+
+};
+
+prevBtn.onclick = ()=>{
+
+currentIndex--;
+
+if(currentIndex < 0){
+currentIndex = galleryImages.length - 1;
+}
+
+updateModal(galleryImages[currentIndex]);
+
+};
 
 closeBtn.onclick = ()=>{
 modal.classList.remove("active");
