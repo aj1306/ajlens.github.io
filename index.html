@@ -1210,7 +1210,7 @@ opacity:1;
 position:absolute;
 
 top:15px;
-left:18px;
+left:15px;
 
 font-size:28px;
 
@@ -1218,7 +1218,7 @@ cursor:pointer;
 
 color:#ff2a2a;
 
-z-index:30;
+z-index:50;
 
 background:rgba(0,0,0,0.45);
 
@@ -1316,6 +1316,13 @@ transform 0.35s ease;
 transform:scale(1);
 opacity:1;
 }
+
+.modal-image-wrapper{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}  
   
 .modal-nav{
 
@@ -1325,31 +1332,28 @@ top:50%;
 transform:translateY(-50%);
 
 font-size:46px;
-
 color:#ff2a2a;
 
 cursor:pointer;
-
 user-select:none;
 
-z-index:25;
-
-padding:10px 18px;
+padding:12px 18px;
 
 background:rgba(0,0,0,0.35);
-
 border-radius:8px;
 
 backdrop-filter:blur(6px);
 
+z-index:30;
+
 }
 
 .modal-prev{
-left:-60px;
+left:-70px;
 }
 
 .modal-next{
-right:-60px;
+right:-70px;
 }
 
 .modal-nav:hover{
@@ -2774,7 +2778,9 @@ data-comment="Captured the opening dance performance during the inauguration cer
 <div class="modal-nav modal-prev">&#10094;</div>
 <div class="modal-nav modal-next">&#10095;</div>
 
+<div class="modal-image-wrapper">
 <img id="modalImage">
+</div>
 
 <div class="photo-info">
 
