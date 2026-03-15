@@ -1054,20 +1054,12 @@ margin-top:15px;
 
 .gallery-category{
 max-width:1200px;
-margin:100px auto 40px auto;
-color:#ff2a2a;
-letter-spacing:2px;
-font-size:24px;
-}
-
-.gallery-category{
-max-width:1200px;
 margin:120px auto 40px auto;
 color:#ff2a2a;
 letter-spacing:2px;
 font-size:24px;
+text-align:center;
 position:relative;
-display:inline-block;
 }
 
 .gallery-category::before,
@@ -1075,20 +1067,18 @@ display:inline-block;
 content:'';
 position:absolute;
 top:50%;
-width:200px;
+width:30%;
 height:2px;
 background:#ff2a2a;
 opacity:0.6;
 }
 
 .gallery-category::before{
-right:100%;
-margin-right:20px;
+left:0;
 }
 
 .gallery-category::after{
-left:100%;
-margin-left:20px;
+right:0;
 }
 
 
@@ -2947,7 +2937,7 @@ modalImg.style.opacity = 0;
 
 setTimeout(()=>{
 
-modalImg.src = img.src;
+modalImg.src = img.dataset.full;
 
 modalEvent.innerText = img.dataset.event;
 modalYear.innerText = img.dataset.year;
