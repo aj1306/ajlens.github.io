@@ -1210,22 +1210,24 @@ opacity:1;
 position:absolute;
 
 top:15px;
-right:18px;
+left:18px;
 
-font-size:30px;
+font-size:28px;
 
 cursor:pointer;
 
 color:#ff2a2a;
 
-z-index:25;
+z-index:30;
 
-background:rgba(0,0,0,0.4);
-padding:4px 10px;
+background:rgba(0,0,0,0.45);
+
+padding:6px 12px;
 
 border-radius:6px;
 
 backdrop-filter:blur(6px);
+
 }
 
 .photo-close:hover{
@@ -1319,32 +1321,40 @@ opacity:1;
 
 position:absolute;
 
-top:45%;
+top:50%;
 transform:translateY(-50%);
 
-font-size:42px;
+font-size:46px;
+
 color:#ff2a2a;
 
 cursor:pointer;
+
 user-select:none;
 
-padding:10px 14px;
+z-index:25;
 
-z-index:20;
+padding:10px 18px;
+
+background:rgba(0,0,0,0.35);
+
+border-radius:8px;
+
+backdrop-filter:blur(6px);
 
 }
 
 .modal-prev{
-left:15px;
+left:-60px;
 }
 
 .modal-next{
-right:15px;
+right:-60px;
 }
 
 .modal-nav:hover{
 color:white;
-text-shadow:0 0 10px #ff2a2a;
+text-shadow:0 0 12px #ff2a2a;
 }
 
 /* FILMSTRIP */
@@ -3048,6 +3058,9 @@ updateModal(img);
 
 function updateModal(img){
 
+const container = document.querySelector(".photo-modal-content");
+container.scrollTop = 0;
+
 modalImg.style.opacity = 0;
 
 const newImg = new Image();
@@ -3065,7 +3078,9 @@ modalComment.innerText = img.dataset.comment;
 photoCounter.innerText =
 (currentIndex + 1) + " / " + galleryImages.length;
 
+requestAnimationFrame(()=>{
 modalImg.style.opacity = 1;
+});
 
 };
 
@@ -3074,15 +3089,14 @@ const thumbs = filmstripTrack.querySelectorAll("img");
 thumbs.forEach(t => t.classList.remove("active"));
 
 thumbs[currentIndex].classList.add("active");
-thumbs[currentIndex].scrollIntoView({
-behavior: "smooth",
-inline: "center",
-block: "nearest"
-});  
 
+thumbs[currentIndex].scrollIntoView({
+behavior:"smooth",
+inline:"center",
+block:"nearest"
+});
 
 }
-
 
 /* KEYBOARD NAV */  
 
