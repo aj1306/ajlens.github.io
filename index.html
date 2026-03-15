@@ -1154,7 +1154,7 @@ transition:opacity 0.35s ease;
 
 z-index:2000;
 
-overflow-y:auto;
+overflow:hidden;   /* IMPORTANT */
 
 }
 
@@ -1174,9 +1174,6 @@ rgba(40,0,0,0.45)
 );
 
 backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,42,42,0.28);
 
 border-radius:16px;
 
@@ -1192,6 +1189,8 @@ box-shadow:
 0 0 45px rgba(0,0,0,0.9),
 0 0 50px rgba(255,42,42,0.18);
 
+scrollbar-width:thin;
+padding-bottom:60px;
 }
 
 .photo-modal-content::before{
